@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.sun.xml.internal.bind.v2.model.core.ID;
+
 import lombok.*;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.annotation.Id;
@@ -20,12 +20,12 @@ import java.util.List;
 @Document(collection = "npcs")
 @Getter
 @Setter
-@Entity
+
 
 public class NPC {
     @Id
 
-    Long id;
+    String id;
 
     String name;
     String race;
@@ -49,7 +49,7 @@ public class NPC {
 
     }
 
-    public NPC(final NPC npc, final Long id) {
+    public NPC(final NPC npc, final String id) {
         this.id = id;
         this.name = npc.getName();
         this.race = npc.getRace();
